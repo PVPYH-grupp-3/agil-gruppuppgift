@@ -1,14 +1,17 @@
-from flask import Flask
+from dotenv import load_dotenv
+from flask import Flask, render_template
 import os
 
+load_dotenv()
 app = Flask(__name__)
 
-# debug = os.getenv('FLASK_DEBUG', '0') == '1'
-# app.config['FLASK_DEBUG'] = debug
 
-app.route('/')
+app.config["FLASK_DEBUG"] = os.getenv("FLASK_DEBUG", "0") == "1"
+
+@app.route('/')
 def home():
-    return "hej"
+    return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    with app.app_context():
+        app.run(debug=True)
