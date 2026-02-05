@@ -1,13 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wordle clone</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <div>
+    {% block content %}
+    <div class="wordleGame">
       <!-- div 1 -->
-      <div class="wordle-row1">
+      <div class="wordle-row active">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -15,7 +22,7 @@
         <div class="box"></div>
       </div>
       <!-- div 2 -->
-      <div class="wordle-row2">
+      <div class="wordle-row">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -23,7 +30,7 @@
         <div class="box"></div>
       </div>
       <!-- div 3 -->
-      <div class="wordle-row3">
+      <div class="wordle-row">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -31,7 +38,7 @@
         <div class="box"></div>
       </div>
       <!-- div 4 -->
-      <div class="wordle-row4">
+      <div class="wordle-row">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -39,7 +46,7 @@
         <div class="box"></div>
       </div>
       <!-- div 5 -->
-      <div class="wordle-row5">
+      <div class="wordle-row">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -57,9 +64,43 @@
     </div>
 
     <div class="container-keyboard">
-      <div></div>
+      <!-- rad 1 för bokstäver -->
+      <div class="letters-row1">
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+      </div>
+      <!-- rad 2 för bokstäver -->
+      <div class="letters-row2">
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+      </div>
+      <!-- rad 3 för bokstäver -->
+      <div class="letters-row3">
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+        <div class="letter-box"></div>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
-
+{% endblock %}

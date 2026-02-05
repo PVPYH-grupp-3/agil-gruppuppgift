@@ -1,20 +1,23 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-{% block content %}
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
     <div>
-        <h1>Welcome to Wordle (the better version)</h1>
-
-        <h3>you have 6 tries to guess the 5 letter word</h3>
-
-        <p>Enjoy the game</p>
-
-        <a href="{{url_for('index')}}">Play</a>
+      <h1>Welcome to Wordle (the better version)</h1>
+      <h3>You have 6 tries to guess the 5 letter word</h3>
+      <p>Enjoy the game</p>
+      <a href="{{ url_for('index') }}">Play</a>
     </div>
-</body>
-{% endblock %}
+    {% block content %} {% endblock %}
+  </body>
 </html>
