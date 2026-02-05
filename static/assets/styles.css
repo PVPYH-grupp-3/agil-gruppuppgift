@@ -1,16 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sida */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #121213;
+  color: #ffffff;
+}
+
+/* Hela spelområdet (din yttersta div i HTML) */
+body > div:first-of-type {
+  display: grid;
+  gap: 6px;
+}
+
+/* Varje rad */
+.wordle-row {
+  display: grid;
+  grid-template-columns: repeat(5, 56px);
+  gap: 8px;
+}
+
+/* Varje ruta */
 .box {
-    width: 64px;
-    height: 64px;
-    border: 2px solid #3a3a3c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ffffff;
-    background-color: #121213;
-    box-sizing: border-box;
-    user-select: none;
-  }
-  
+  width: 56px;
+  height: 56px;
+
+  border: 2px solid #3a3a3c;
+  border-radius: 8px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  background: transparent;
+  user-select: none;
+}
+
+/* När rutan är fylld (kan du lägga till med JS om du vill) */
+.box.filled {
+  border-color: #565758;
+}
+
+/* Aktiv rad (liten highlight så man ser var man skriver) */
+.wordle-row.active .box {
+  border-color: #565758;
+}
+
+/* Resultatfärger (används om du sätter class med JS) */
+.box.correct {
+  background: #538d4e;
+  border-color: #538d4e;
+}
+
+.box.present {
+  background: #b59f3b;
+  border-color: #b59f3b;
+}
+
+.box.absent {
+  background: #3a3a3c;
+  border-color: #3a3a3c;
+}
+
+/* Tangentbord container */
+.container-keyboard {
+  width: min(520px, 92vw);
+  display: flex;
+  justify-content: center;
+}
