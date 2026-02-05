@@ -25,4 +25,4 @@ document.addEventListener("keydown", function (event) {
       console.log("Lade till:", event.key, "Nu på ruta:", currentBox);
     }
   }
-});
+}); 
