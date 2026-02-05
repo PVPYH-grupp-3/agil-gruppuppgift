@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask, redirect, render_template, request
 import os
 import requests
+load_dotenv()
 
 app = Flask(__name__)
 
