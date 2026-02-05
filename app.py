@@ -4,6 +4,7 @@ from flask import Flask, redirect, render_template, request
 import os
 import requests
 
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -15,7 +16,7 @@ app.config["FLASK_DEBUG"] = os.getenv("FLASK_DEBUG", "0") == "1"
 def home():
     words = requests.get("https://raw.githubusercontent.com/tabatkins/wordle-list/main/words").text.splitlines()
     word = choice(words)
-    return render_template("index.html", word)
+    return render_template("index.html", word=word)
 
 
 
