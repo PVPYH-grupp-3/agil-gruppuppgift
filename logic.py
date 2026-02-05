@@ -1,6 +1,15 @@
 
 
 def logic(word: str, guess: str):
+    '''
+    Docstring for logic
+    
+    :param word: Word of the day
+    :type word: str
+    :param guess: Users guess
+    :type guess: str
+    :param returns: False | str
+    '''
     if len(word) != 5 or len(guess) != 5:
         return False
     result = ""
