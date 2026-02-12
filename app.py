@@ -14,9 +14,6 @@ app.config["FLASK_DEBUG"] = os.getenv("FLASK_DEBUG", "0") == "1"
 
 @app.route('/', methods=("POST", "GET"))
 def home():
-    words = requests.get("https://raw.githubusercontent.com/tabatkins/wordle-list/main/words").text.splitlines()
-    word = choice(words)
-    return render_template("index.html", word=word)
     words = requests.get("https://raw.githubusercontent.com/tabatkins/wordle-list/main/words")\
     .text.splitlines()
     word = words[datetime.now().day]
