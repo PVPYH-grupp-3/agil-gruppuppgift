@@ -1,0 +1,90 @@
+body {
+  background-color: #121213;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 40px;
+  color: white;
+}
+
+.wordleGame {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.wordle-row,
+.wordle-row6 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.box {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #3a3a3c;
+  background-color: #121213;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+.wordle-row.active .box {
+  border-color: #565758;
+}
+
+.container-keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.letters-row1,
+.letters-row2,
+.letters-row3 {
+  display: flex;
+  gap: 6px;
+}
+
+.letter-box {
+  min-width: 43px;
+  height: 58px;
+  background-color: #818384;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.letter-box:hover {
+  background-color: #9a9a9c;
+}
+
+@media (max-width: 500px) {
+  .box {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .letter-box {
+    min-width: 32px;
+    height: 48px;
+    font-size: 0.8rem;
+  }
+}
