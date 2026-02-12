@@ -1,6 +1,11 @@
 
 
-def logic(word: str, guess: str):
+from flask import redirect
+from app import app
+
+
+@app.route("/")
+def check_word(word: str, guess: str):
     '''
     Docstring for logic
     
@@ -11,7 +16,7 @@ def logic(word: str, guess: str):
     :param returns: False | str
     '''
     if len(word) != 5 or len(guess) != 5:
-        return False
+        return redirect("index.html")
     result = ""
     for index, letter in enumerate(word):
         if letter == guess[index]:
@@ -20,6 +25,7 @@ def logic(word: str, guess: str):
             result += "2"
         else:
             result += "0"
-    return result
+    return redirect("index.html", result=result)
 
-print(logic("apple", "baple"))
+
+print(check_word("apple", "baple"))
