@@ -1,0 +1,29 @@
+.wordleGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.wordle-row {
+  display: flex;
+  gap: 8px;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Färger efter gissning */
+.box.correct  { background-color: #538d4e; color: white; border-color: #538d4e; }
+.box.present  { background-color: #b59f3b; color: white; border-color: #b59f3b; }
+.box.absent   { background-color: #3a3a3c; color: white; border-color: #3a3a3c; }
