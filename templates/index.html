@@ -1,143 +1,65 @@
 {% extends "layout.html" %}
 {% block content %}
-  
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wordle Box</title>
 
-  <link rel="stylesheet" href="styles.css">
-</head>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wordle clone</title>
-  </head>
-  <body>
-    <div class="wordleGame">
-      <!-- div 1 -->
-      <div class="wordle-row1">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-      <div class="wordle-row active">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <!-- div 2 -->
-      <div class="wordle-row2">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-      <div class="wordle-row">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <!-- div 3 -->
-      <div class="wordle-row3">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-      <div class="wordle-row">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <!-- div 4 -->
-      <div class="wordle-row4">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-      <div class="wordle-row">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <!-- div 5 -->
-      <div class="wordle-row5">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-      <div class="wordle-row">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-      <!-- div 6 -->
-      <div class="wordle-row6">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-      </div>
-    </div>
+<!-- Lagrar dagens ord så script.js kan läsa det -->
+<div id="game" data-word="{{ word }}"></div>
 
-    <div class="container-keyboard">
-            <!-- rad 1 för bokstäver -->
-      <div class="letters-row1">
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-      </div>
-            <!-- rad 2 för bokstäver -->
-      <div class="letters-row2">
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-      </div>
-            <!-- rad 3 för bokstäver -->
-      <div class="letters-row3">  
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-        <div class="letter-box"></div>
-    </div>
+<!-- Meddelande vid vinst/förlust -->
+<div id="message"></div>
+
+<!-- Spelplan: 6 rader med 5 boxar vardera -->
+<div class="wordleGame">
+
+  <div class="wordle-row active">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
   </div>
-    <script src="script.js"></script>
-      <div></div>
-    </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-  </body>
-</html>
+
+  <div class="wordle-row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <div class="wordle-row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <div class="wordle-row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <div class="wordle-row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <div class="wordle-row">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
 {% endblock %}
