@@ -22,6 +22,10 @@ def home():
     word = words[datetime.now().day]
     return render_template("index.html", word=word)
 
+@app.route("/")
+def start():
+    return render_template("start.html",)
+
 
 
 if __name__ == '__main__':
