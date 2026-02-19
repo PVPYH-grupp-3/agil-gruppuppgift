@@ -88,3 +88,39 @@ body {
     font-size: 0.8rem;
   }
 }
+
+.actions-row {
+  display: flex;
+  justify-content: space-between; /* trycker isär dem */
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* samma bredd som keyboardet */
+  margin-top: 10px;
+} 
+
+.enter-button,
+.backspace {
+  min-width: 80px;
+  height: 58px;
+  padding: 0 14px;
+  background-color: #818384;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.enter-button:hover,
+.backspace:hover {
+  background-color: #9a9a9c;
+}
+
+.enter-button:active,
+.backspace:active {
+  transform: scale(0.95);
+}
